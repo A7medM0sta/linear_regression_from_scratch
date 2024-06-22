@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 methods = ['mad', 'sklearn', 'lm in R']
 
@@ -41,7 +42,7 @@ if dataset == 'uscrime':
 elif dataset == 'BostonHousing':
     df = pd.read_csv('data/BostonHousing.txt', sep=',')
 elif dataset == 'diamonds':
-    df = pd.read_csv('/Users/ahmedmostafa/Downloads/mad-from-scratch-main/LinearRegression/diamonds.csv',  error_bad_lines=False)
+    df = pd.read_csv('/Users/ahmedmostafa/PycharmProjects/linear_regression_from_scratch/diamonds.csv')
     df = df[["x", "y", "z", "price"]]
 
 else:
@@ -76,6 +77,18 @@ ax.set_xlim([y1, y2])
 ax.set_ylim([y1, y2])
 ax.legend()
 plt.tight_layout()
-plt.savefig(f'document/figures/compare-{dataset}.png')
+
+# # Define the directory and file
+directory = "/Users/ahmedmostafa/PycharmProjects/linear_regression_from_scratch/figures/"
+filename = f"compare-{dataset}.png"
+filepath = os.path.join(directory, filename)
+
+# Check if the directory exists
+if not os.path.exists(directory):
+    os.makedirs(directory)
+
+# Now, save the figure
+plt.savefig(filepath)
+# plt.savefig(f'linear_regression_from_scratch/figures/compare-{dataset}.png')
 
 
