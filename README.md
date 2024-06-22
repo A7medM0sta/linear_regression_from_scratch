@@ -1,25 +1,37 @@
-# LinearRegression
-### LinearRegression.py
-A Multi Linear Regression (MLR) method is implemented in LinearRegression.py
+# Linear Regression from Scratch
 
-More detail: https://medium.com/@ngao7/complete-guide-of-linear-regression-built-from-scratch-fad842a0381d
+This repository is part of a series of machine learning, artificial intelligence, and data science algorithms built from scratch as a learning experience.
 
-Under the class **LinearRegression(x, y)**, the following functions are provided:
-- *standard_transform(x)*: center and scale *x* data.
-- *gradient_descent(x, y, lr)*: perform gradient descent on *x* and *y* using the provided learning rate *lr* to determine the weights.
-- *tune_learning_rate()*: call gradient_descent with different learning rates and determine the optimal learning rate
-- *fit(lr)*: train the model with provided *lr*. If *lr* is not specified, then tune_learning_rate is called to get an optimal learning rate to use in *fit*.
-- *predict(x)*: predict y of the input test data *x*.
-- *get_unscaled_weights()*: output the weights of the linear model.
-- *significance_test()*: perform significance tests and then output F-statistic, P-value of the regression model, R-squared, adjusted R-squared, t-value and P-value of each weights.
+In this part, we focus on implementing Linear Regression in Python.
 
+## Linear Regression
 
-### test-random-data.py
-Unittest of *LinearRegression* using randomly generated data.
+Linear Regression is a supervised learning algorithm used for predicting a continuous outcome variable (also called the dependent variable) based on one or more predictor variables (also called independent variables).
 
-### test-datasets.py
-Apply *LinearRegression* on existing data sets:
-- *uscrime*: http://www.statsci.org/data/general/uscrime.html
-- *BostonHousing*: https://www.cs.toronto.edu/~delve/data/boston/bostonDetail.html
-- *diamonds*: https://rdrr.io/cran/yarrr/man/diamonds.html
+The goal of Linear Regression is to find the best fit line that can predict the outcome variable with the minimum error.
 
+## Implementation Details
+
+The implementation includes the following steps:
+
+- Data Preprocessing: The dataset is loaded and preprocessed. Preprocessing includes handling missing values, encoding categorical variables, feature scaling, etc.
+- Train-Test Split: The dataset is split into a training set and a test set. The training set is used to train the model, and the test set is used to evaluate its performance.
+- Model Training: The Linear Regression model is trained using the training set. The training process involves finding the weights (or coefficients) that result in the best fit line.
+- Model Evaluation: The performance of the model is evaluated on the test set. The evaluation metrics used are Mean Squared Error (MSE) and R-squared.
+
+## Datasets
+
+The implementation includes tests on the following datasets:
+
+- 'uscrime'
+- 'BostonHousing'
+- 'diamonds'
+
+## Usage
+
+To run the tests on the datasets, use the following command:
+
+```python
+python test-datasets.py
+
+python test-learning-rate.py
