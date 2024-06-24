@@ -42,9 +42,13 @@ d = x.shape[1]
 w = np.zeros(d)
 mse_log = []
 
-lr = [0.007, 0.0001, 0.02, 0.003]
 
 ss_total = np.sum((y - np.mean(y)) ** 2)
+# Define lr as a list of learning rates
+lr = [0.007, 0.0001, 0.02, 0.003, 0.005]  # Add more values as needed
+
+# Make sure the number of learning rates matches the number of iterations
+assert len(lr) == 5, "Number of learning rates must match the number of iterations"
 
 for i in range(5):
     print(f'Iteration: {i}')
@@ -72,15 +76,15 @@ for i in range(5):
     plt.show()
     plt.savefig(f'visualize-{i}.png')
 
-
-    w -= lr * gradient_w
+    # Use the appropriate learning rate for this iteration
+    w -= lr[i] * gradient_w
     print(f'w = {w}')
     print()
 #
-# fig, ax = plt.subplots(1, 1, figsize=(4, 3), dpi=100)
-# ax.plot(mse_log, marker='o', markersize=3, alpha=0.7, color='#2ca02c')
-# plt.tight_layout()
-# plt.show()
+fig, ax = plt.subplots(1, 1, figsize=(4, 3), dpi=100)
+ax.plot(mse_log, marker='o', markersize=3, alpha=0.7, color='#2ca02c')
+plt.tight_layout()
+plt.show()
 
 
 

@@ -30,7 +30,7 @@ for i in range(3):
                  label=f'y{i+1}', color=color_list[i])
     axes[i].legend()
 plt.tight_layout()
-plt.savefig('document/figures/comparison-raw-data.png')
+plt.savefig('figures/comparison-raw-data.png')
 
 y_bar = np.zeros((3, n))
 for i in range(3):
@@ -68,7 +68,7 @@ for i in range(3):
                      color=color_list[i])
     axes[i].legend()
 plt.tight_layout()
-plt.savefig('document/figures/comparison-sst.png')
+plt.savefig('figures/comparison-sst.png')
 
 
 fig, axes = plt.subplots(1, 3, figsize=(10, 3), dpi=300, sharex='all', sharey='all')
@@ -81,7 +81,7 @@ for i in range(3):
                  label=r'$\hat{y}$' + f'{i + 1}', color='#d62728')
     axes[i].legend()
 plt.tight_layout()
-plt.savefig('document/figures/comparison-yhat.png')
+plt.savefig('figures/comparison-yhat.png')
 
 fig, axes = plt.subplots(1, 3, figsize=(10, 3), dpi=300, sharex='all', sharey='all')
 for i in range(3):
@@ -96,7 +96,7 @@ for i in range(3):
                      color=color_list[i])
     axes[i].legend()
 plt.tight_layout()
-plt.savefig('document/figures/comparison-sse.png')
+plt.savefig('figures/comparison-sse.png')
 
 fig, axes = plt.subplots(1, 3, figsize=(10, 3), dpi=300, sharex='all', sharey='all')
 for i in range(3):
@@ -111,7 +111,7 @@ for i in range(3):
                      color=color_list[i])
     axes[i].legend()
 plt.tight_layout()
-plt.savefig('document/figures/comparison-ssr.png')
+plt.savefig('figures/comparison-ssr.png')
 
 fig, axes = plt.subplots(1, 3, figsize=(10, 3), dpi=300, sharex='all', sharey='all')
 for i in range(3):
@@ -123,32 +123,32 @@ for i in range(3):
                  label=r'$\hat{y}$' + f'{i + 1}', color='#d62728')
     axes[i].legend()
 plt.tight_layout()
-plt.savefig('document/figures/comparison-rsquared.png')
+plt.savefig('figures/comparison-rsquared.png')
 #
 #
-# fig, axes = plt.subplots(1, 3, figsize=(12, 3), dpi=100, sharex='all', sharey='all')
-# for i in range(3):
-#     axes[i].set_xlabel('x')
-#     axes[i].plot(x, y_bar[i], marker='o', markersize=2, linestyle='None',
-#                  label=r'$\bar{y}$' + f'{i + 1}', color='black')
-#     axes[i].plot(x, y_hat[i], marker='.', markersize=4, lw='.5',
-#                  label=r'$\hat{y}$' + f'{i + 1}', color='#d62728')
-#     axes[i].legend()
-# plt.tight_layout()
-# plt.show()
-#
-# fig, axes = plt.subplots(1, 3, figsize=(12, 3), dpi=100, sharex='all', sharey='all')
-# for i in range(3):
-#     axes[i].set_xlabel('x')
-#     axes[i].plot(x, y_bar[i], marker='o', markersize=2, linestyle='None',
-#                  label=r'$\bar{y}$' + f'{i + 1}', color='black')
-#     axes[i].plot(x, y_hat[i], marker='.', markersize=4, lw='.5',
-#                  label=r'$\hat{y}$' + f'{i + 1}', color='#d62728')
-#     for j in range(n):
-#         axes[i].plot([x[j], x[j]], [y_bar[i, j], y_hat[i, j]], lw='.5',
-#                      color=color_list[i])
-#     axes[i].legend()
-# plt.tight_layout()
-# plt.show()
+fig, axes = plt.subplots(1, 3, figsize=(12, 3), dpi=100, sharex='all', sharey='all')
+for i in range(3):
+    axes[i].set_xlabel('x')
+    axes[i].plot(x, y_bar[i], marker='o', markersize=2, linestyle='None',
+                 label=r'$\bar{y}$' + f'{i + 1}', color='black')
+    axes[i].plot(x, y_hat[i], marker='.', markersize=4, lw='.5',
+                 label=r'$\hat{y}$' + f'{i + 1}', color='#d62728')
+    axes[i].legend()
+plt.tight_layout()
+plt.show()
+
+fig, axes = plt.subplots(1, 3, figsize=(12, 3), dpi=100, sharex='all', sharey='all')
+for i in range(3):
+    axes[i].set_xlabel('x')
+    axes[i].plot(x, y_bar[i], marker='o', markersize=2, linestyle='None',
+                 label=r'$\bar{y}$' + f'{i + 1}', color='black')
+    axes[i].plot(x, y_hat[i], marker='.', markersize=4, lw='.5',
+                 label=r'$\hat{y}$' + f'{i + 1}', color='#d62728')
+    for j in range(n):
+        axes[i].plot([x[j], x[j]], [y_bar[i, j], y_hat[i, j]], lw='.5',
+                     color=color_list[i])
+    axes[i].legend()
+plt.tight_layout()
+plt.show()
 
 print(ss_total - ss_regression - ss_error)

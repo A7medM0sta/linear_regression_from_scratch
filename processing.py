@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("/Users/ahmedmostafa/Downloads/linear_regression_from_scratch/diamonds.csv")
+df = pd.read_csv("diamonds.csv")
 print(df.head())
 print(df.shape)
 df_subset = df[["x", "y", "z"]]

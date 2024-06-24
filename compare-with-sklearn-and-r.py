@@ -78,17 +78,18 @@ ax.set_ylim([y1, y2])
 ax.legend()
 plt.tight_layout()
 
-# # Define the directory and file
-directory = "/Users/ahmedmostafa/PycharmProjects/linear_regression_from_scratch/figures/"
-filename = f"compare-{dataset}.png"
-filepath = os.path.join(directory, filename)
-
-# Check if the directory exists
-if not os.path.exists(directory):
-    os.makedirs(directory)
+# # # Define the directory and file
+# directory = "/Users/ahmedmostafa/PycharmProjects/linear_regression_from_scratch/figures/"
+# filename = f"compare-{dataset}.png"
+# filepath = os.path.join(directory, filename)
+#
+# # Check if the directory exists
+# if not os.path.exists(directory):
+#     os.makedirs(directory)
 
 # Now, save the figure
-plt.savefig(filepath)
-# plt.savefig(f'linear_regression_from_scratch/figures/compare-{dataset}.png')
+# plt.savefig(filepath)
+plt.show()
+plt.savefig(f'/Users/ahmedmostafa/PycharmProjects/linear_regression_from_scratch/figures/compare-{dataset}.png')
 
 
